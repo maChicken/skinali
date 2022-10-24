@@ -1,4 +1,9 @@
 .navbar
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    background-color: #fff
     &-wrap
         display: flex
         align-items: center
@@ -26,6 +31,26 @@
         color: $text-color-light
 
 .menu
+    position: fixed
+    z-index: -1
+    top: 80px
+    width: 100%
+    padding: 16px 0
+    background-color: $primary
+    color: #fff
+    transition: 0.2s
+    transform: translateY(-100%)
+    &__active
+        transform: translateY(0%)
+    &__link
+        text-decoration: none
+        font-size: 17px
+        text-transform: uppercase
+        color: #fff
+    &__nav
+        display: flex
+        align-item: center
+        justify-content: space-between
     &-button
         display: flex
         flex-direction: column
