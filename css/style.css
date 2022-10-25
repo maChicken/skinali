@@ -3,6 +3,7 @@
 }
 
 .container {
+  width: 80vw;
   max-width: 1170px;
   margin: auto;
 }
@@ -39,14 +40,26 @@ body {
 }
 
 .button {
-  display: block;
   border: none;
   text-transform: uppercase;
   padding: 25px 45px;
   background-color: #507fe1;
   color: #fff;
+  font-family: "Proxima Nova Semibold", sans-serif;
 }
 
+@media (max-width: 799px) {
+  .button-o {
+    margin-left: auto;
+    padding: 10px;
+  }
+}
+@media (max-width: 479px) {
+  .button-o, button {
+    font-size: 10px;
+    padding: 10px 12px;
+  }
+}
 .navbar {
   position: fixed;
   left: 0;
@@ -57,7 +70,7 @@ body {
 .navbar-wrap {
   display: flex;
   align-items: center;
-  min-height: 80px;
+  height: 80px;
 }
 .navbar__menu-button {
   margin-right: 30px;
@@ -86,19 +99,32 @@ body {
   color: #6b6b6b;
 }
 
+@media (max-width: 1199px) {
+  .navbar__mobile, .navbar__landline {
+    display: none;
+  }
+}
+@media (max-width: 799px) {
+  .navbar-wrap {
+    height: 60px;
+  }
+}
 .menu {
   position: fixed;
   z-index: -1;
   top: 80px;
+  left: 0;
   width: 100%;
   padding: 16px 0;
   background-color: #507fe1;
   color: #fff;
   transition: 0.2s;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
+  opacity: 0;
 }
 .menu__active {
   transform: translateY(0%);
+  opacity: 1;
 }
 .menu__link {
   text-decoration: none;
@@ -108,7 +134,7 @@ body {
 }
 .menu__nav {
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: space-between;
 }
 .menu-button {
@@ -120,7 +146,7 @@ body {
   border: none;
   border-right: 1px solid rgba(81, 11, 186, 0.1);
   border-left: 1px solid rgba(81, 11, 186, 0.1);
-  height: 80px;
+  height: 100%;
   width: 70px;
 }
 .menu-button__line {
@@ -131,6 +157,14 @@ body {
   margin-bottom: 5px;
 }
 
+@media (max-width: 1199px) {
+  .menu__nav {
+    flex-direction: column;
+  }
+  .menu__link {
+    margin-top: 20px;
+  }
+}
 .logo__text {
   display: block;
   font-size: 18px;
@@ -138,6 +172,14 @@ body {
   font-family: "Proxima Nova Semibold", sans-serif;
 }
 
+@media (max-width: 799px) {
+  .menu {
+    top: 60px;
+  }
+  .logo {
+    display: none;
+  }
+}
 .hero {
   background: #f1f1f1 url("../img/hero.jpg") no-repeat center top;
   background-size: cover;
@@ -148,10 +190,17 @@ body {
 .hero__titel {
   font-size: 30px;
   margin-bottom: 40px;
+  white-space: nowrap;
 }
 .hero__subtitel {
   display: block;
   margin-bottom: 60px;
   font-size: 30px;
   font-family: "Proxima Nova Semibold", sans-serif;
+}
+
+@media (max-width: 799px) {
+  .hero {
+    padding-bottom: 170px;
+  }
 }/*# sourceMappingURL=style.css.map */

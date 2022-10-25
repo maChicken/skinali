@@ -14,9 +14,19 @@ body
     +bold
 
 .button
-    display: block
     border: none
     text-transform: uppercase
     padding: 25px 45px
     background-color: $primary
     color: #fff
+    +bold
+
+@media (max-width: 799px)
+    .button-o
+        margin-left: auto
+        padding: 10px
+
+@media (max-width: 479px)
+    .button-o, button
+        font-size: 10px
+        padding: 10px 12px

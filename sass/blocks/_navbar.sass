@@ -7,7 +7,7 @@
     &-wrap
         display: flex
         align-items: center
-        min-height: 80px
+        height: 80px
     &__menu-button
         margin-right: 30px
     &__left
@@ -30,18 +30,31 @@
         font-size: 14px
         color: $text-color-light
 
+@media (max-width: 1199px)
+    .navbar
+        &__mobile, &__landline
+            display: none
+
+@media (max-width: 799px)
+    .navbar
+        &-wrap
+            height: 60px
+
 .menu
     position: fixed
     z-index: -1
     top: 80px
+    left: 0
     width: 100%
     padding: 16px 0
     background-color: $primary
     color: #fff
     transition: 0.2s
-    transform: translateY(-100%)
+    transform: translateY(-200%)
+    opacity: 0
     &__active
         transform: translateY(0%)
+        opacity: 1
     &__link
         text-decoration: none
         font-size: 17px
@@ -49,7 +62,7 @@
         color: #fff
     &__nav
         display: flex
-        align-item: center
+        align-items: center
         justify-content: space-between
     &-button
         display: flex
@@ -60,7 +73,7 @@
         border: none
         border-right: 1px solid rgba(#510bba, 0.1)
         border-left: 1px solid rgba(#510bba, 0.1)
-        height: 80px
+        height: 100%
         width: 70px
         &__line
             display: block
@@ -69,6 +82,14 @@
             background-color: $primary
             margin-bottom: 5px
 
+@media (max-width: 1199px)
+    .menu
+        &__nav
+            flex-direction: column
+        &__link
+            margin-top: 20px
+
+
 .logo
     &__text
         display: block
@@ -76,3 +97,8 @@
         text-transform: uppercase
         +bold
 
+@media (max-width: 799px)
+    .menu
+        top: 60px
+    .logo
+        display: none
